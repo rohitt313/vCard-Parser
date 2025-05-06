@@ -67,7 +67,7 @@ gcc -shared -o bin/libvcparser.so LinkedListAPI.c VCHelpers.c VCParser.c -Iinclu
 * **`asciimatics` or `mysql.connector` not found:** If you get import errors, make sure you have installed the required Python libraries using `pip install asciimatics mysql-connector-python`.
 * **No vCards loaded:** Verify that you have placed `.vcf` files in the `bin/cards` directory (step 5).
 
-  ## Application Features 
+## Application Features 
 
 * **vCard Parsing:** The C code (`VCParser.c`) contains functions (`createCard`, `validCard`) that suggest the application parses vCard files (`.vcf`) to extract information.
 * **Data Storage:**
