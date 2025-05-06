@@ -66,3 +66,15 @@ gcc -shared -o bin/libvcparser.so LinkedListAPI.c VCHelpers.c VCParser.c -Iinclu
 * **MySQL connection errors:** Double-check the MySQL connection details you entered in `A3main.py` (step 6). Ensure your MySQL server is running and accessible.
 * **`asciimatics` or `mysql.connector` not found:** If you get import errors, make sure you have installed the required Python libraries using `pip install asciimatics mysql-connector-python`.
 * **No vCards loaded:** Verify that you have placed `.vcf` files in the `bin/cards` directory (step 5).
+
+  ## Application Features 
+
+* **vCard Parsing:** The C code (`VCParser.c`) contains functions (`createCard`, `validCard`) that suggest the application parses vCard files (`.vcf`) to extract information.
+* **Data Storage:**
+    * The Python script (`A3main.py`) interacts with `sqlite3`, indicating the use of an in-memory SQLite database for storing vCard data.
+    * The script also imports and uses `mysql.connector`, suggesting that the application can store vCard data in a remote MySQL database. The script likely contains connection parameters for a specific MySQL server.
+* **Linked List Management:** The C code (`LinkedListAPI.c`) defines a linked list data structure and associated functions (`initializeList`, `insertFront`, `freeList`, etc.). This suggests that the parsed vCard data is likely managed using a linked list in the C library before being potentially transferred to the databases.
+* **Text User Interface (TUI):** The Python script (`A3main.py`) imports and uses the `asciimatics` library. This strongly indicates that the application provides a text-based user interface for interacting with the vCard data. This UI likely allows users to view, and potentially manipulate, the loaded information directly in the terminal.
+* **Retrieving Specific Contact Information:** The Python script calls C functions like `testlib.Contact()`, `testlib.dispBday()`, and `testlib.dispAnni()`. This implies the application can retrieve and display specific contact details such as names, birthdays, and anniversaries from the parsed vCard data.
+* **File Handling:** The Python script likely interacts with files in the `bin/cards` directory, as indicated in previous descriptions. It uses the C library to process these `.vcf` files.
+* **Data Validation:** The C code (`VCParser.c`) includes a `validCard` function, suggesting that the application performs some level of validation on the vCard data to ensure its integrity before processing or storage.
