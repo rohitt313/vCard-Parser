@@ -26,6 +26,7 @@ On Linux/macOS, you can typically use the following command in your terminal wit
 
 ```bash
 gcc -shared -o bin/libvcparser.so LinkedListAPI.c VCHelpers.c VCParser.c -Iinclude
+```
 
 ## Running the Application
 
